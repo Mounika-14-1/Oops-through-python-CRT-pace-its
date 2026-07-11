@@ -361,7 +361,7 @@ Add screenshots of:
 
 # 👨‍💻 Author
 
-**Soujanya Guvvala**
+**mounika yarram**
 
 Department of Artificial Intelligence and Data Science
 
