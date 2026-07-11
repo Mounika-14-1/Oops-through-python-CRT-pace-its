@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Page Title -->
+         <div class="profile-header">
+
+    <h1 class="page-title">
+        <i class="fas fa-user-circle"></i>
+        My Profile
+    </h1>
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark Mode
+    </button>
+
+</div>
+        
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+
+            <!-- Left Section -->
+            <div class="profile-left">
+
+                <img src="{{ url_for('static', filename='images/profile.png') }}"
+                     alt="Profile Picture"
+                     class="profile-image">
+
+                <h2 class="profile-name">
+                    {{ user.username if user else "Student Name" }}
+                </h2>
+
+                <p class="profile-email">
+                    {{ user.email if user else "student@example.com" }}
+                </p>
+
+                <span class="profile-role">
+                    Student
+                </span>
+
+            </div>
+
+            <!-- Right Section -->
+            <div class="profile-right">
+
+                <h2>Edit Profile</h2>
+
+                <form action="/profile/update" method="POST">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            name="username"
+                            value="{{ user.username if user else '' }}"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            value="{{ user.email if user else '' }}"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>College</label>
+
+                        <input
+                            type="text"
+                            name="college"
+                            value="{{ user.college if user else '' }}"
+                            placeholder="Enter College Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Course</label>
+
+                        <input
+                            type="text"
+                            name="course"
+                            value="{{ user.course if user else '' }}"
+                            placeholder="AI & Data Science">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Year of Study</label>
+
+                        <select name="year">
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Daily Study Goal (Hours)</label>
+
+                        <input
+                            type="number"
+                            name="study_goal"
+                            min="1"
+                            max="24"
+                            value="{{ user.study_goal if user else 4 }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>About Me</label>
+
+                        <textarea
+                            name="about"
+                            rows="4"
+                            placeholder="Write something about yourself...">{{ user.about if user else "" }}</textarea>
+                    </div>
+
+                    <button class="btn" type="submit">
+                        <i class="fas fa-save"></i>
+                        Update Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Total Subjects</h3>
+                <p>{{ total_subjects if total_subjects else 0 }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Study Plans</h3>
+                <p>{{ total_plans if total_plans else 0 }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Hours Studied</h3>
+                <p>{{ total_hours if total_hours else 0 }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed Tasks</h3>
+                <p>{{ completed_tasks if completed_tasks else 0 }}</p>
+            </div>
+
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-section">
+
+            <h2 class="progress-title">
+                Overall Progress
+            </h2>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+                     style="width:{{ progress if progress else 0 }}%;">
+
+                </div>
+
+            </div>
+
+            <p style="margin-top:10px;">
+                {{ progress if progress else 0 }}% Completed
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+
+            <p>
+                © 2026 AI-Powered Study Planner |
+                Developed by Soujanya Guvvala
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</body>
+
+</html>

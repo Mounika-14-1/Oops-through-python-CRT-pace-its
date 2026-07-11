@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>📚 AI Planner</h2>
+
+            <ul>
+                <li>
+                    <a href="/dashboard" class="active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/planner">
+                        <i class="fas fa-calendar-alt"></i> Study Planner
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/calendar">
+                        <i class="fas fa-calendar"></i> Calendar
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/profile">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <div class="header">
+
+                <div>
+                    <h1 id="welcomeMessage">Welcome!</h1>
+
+                    <p id="currentDate"></p>
+
+                    <p id="currentTime"></p>
+                </div>
+
+                <div class="user-profile">
+
+                    <img src="{{ url_for('static', filename='images/profile.png') }}"
+                        alt="Profile">
+
+                    <h3>{{ username if username else "Student" }}</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Statistics -->
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Total Subjects</h3>
+                    <p>6</p>
+                </div>
+
+                <div class="card">
+                    <h3>Today's Tasks</h3>
+                    <p>5</p>
+                </div>
+
+                <div class="card">
+                    <h3>Completed</h3>
+                    <p>3</p>
+                </div>
+
+                <div class="card">
+                    <h3>Study Hours</h3>
+                    <p>4 hrs</p>
+                </div>
+
+            </section>
+
+            <!-- Today's AI Study Plan -->
+            <section class="plan-box">
+
+                <h2>📅 Today's AI Study Plan</h2>
+
+                <div class="plan-item">
+                    <span class="plan-time">09:00 - 10:30</span>
+                    <span class="plan-subject">Artificial Intelligence</span>
+                </div>
+
+                <div class="plan-item">
+                    <span class="plan-time">11:00 - 12:00</span>
+                    <span class="plan-subject">Python Programming</span>
+                </div>
+
+                <div class="plan-item">
+                    <span class="plan-time">02:00 - 03:30</span>
+                    <span class="plan-subject">Machine Learning</span>
+                </div>
+
+                <div class="plan-item">
+                    <span class="plan-time">04:00 - 05:00</span>
+                    <span class="plan-subject">Database Management</span>
+                </div>
+
+            </section>
+
+            <!-- Progress -->
+            <section class="progress-section">
+
+                <h2>Today's Progress</h2>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill" data-progress="70">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Upcoming Exams -->
+            <section class="exam-box">
+
+                <h2>Upcoming Exams</h2>
+
+                <div class="exam-item">
+                    <span>Machine Learning</span>
+                    <span>20 July 2026</span>
+                </div>
+
+                <div class="exam-item">
+                    <span>Artificial Intelligence</span>
+                    <span>25 July 2026</span>
+                </div>
+
+                <div class="exam-item">
+                    <span>Python Programming</span>
+                    <span>28 July 2026</span>
+                </div>
+
+            </section>
+
+            <!-- Recent Study Plans -->
+            <section class="exam-box">
+
+                <h2>Recent Study Plans</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Date</th>
+                            <th>Subject</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>08-07-2026</td>
+                            <td>AI</td>
+                            <td>2 Hours</td>
+                            <td>Completed</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>07-07-2026</td>
+                            <td>Python</td>
+                            <td>1.5 Hours</td>
+                            <td>Completed</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>06-07-2026</td>
+                            <td>Machine Learning</td>
+                            <td>2 Hours</td>
+                            <td>Pending</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <br>
+
+            <button class="btn" id="notificationBtn">
+
+                🔔 Study Reminder
+
+            </button>
+
+            <button class="btn" id="themeToggle">
+
+                🌙 Dark Mode
+
+            </button>
+
+            <!-- Footer -->
+
+            <div class="footer">
+
+                <p>
+
+                    © 2026 AI-Powered Study Planner |
+                    Developed by Soujanya Guvvala
+
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Dashboard JavaScript -->
+
+    
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+
+</body>
+
+</html>

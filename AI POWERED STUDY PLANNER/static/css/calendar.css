@@ -1,0 +1,161 @@
+/* ===========================
+   AI Study Planner Calendar
+   =========================== */
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    padding:30px;
+}
+
+/* Main Container */
+.calendar-container{
+    max-width:1200px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    padding:25px;
+}
+
+/* Title */
+.calendar-container h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+/* Header */
+.calendar-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+/* Month Name */
+.calendar-header h2{
+    color:#1e3a8a;
+    font-size:30px;
+    margin:0;
+}
+
+/* Navigation Buttons */
+.nav-btn{
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:#1d4ed8;
+}
+
+/* Calendar Table */
+.calendar-table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+/* Week Header */
+.calendar-table th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+    font-size:18px;
+    border:1px solid #dcdcdc;
+}
+
+/* Calendar Cells */
+.calendar-table td{
+    width:14.28%;
+    height:110px;
+    border:1px solid #dcdcdc;
+    vertical-align:top;
+    padding:8px;
+    background:#ffffff;
+    transition:0.3s;
+}
+
+/* Hover Effect */
+.calendar-table td:hover{
+    background:#eef5ff;
+}
+
+/* Empty Cells */
+.empty{
+    background:#f7f7f7;
+}
+
+/* Date */
+.date{
+    font-size:20px;
+    font-weight:bold;
+    color:#222;
+}
+
+/* Study Tag */
+.study{
+    margin-top:10px;
+    background:#22c55e;
+    color:white;
+    text-align:center;
+    padding:5px;
+    border-radius:5px;
+    font-size:14px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    .calendar-header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .calendar-header h2{
+        font-size:22px;
+    }
+
+    .nav-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .calendar-table th{
+        font-size:14px;
+        padding:10px;
+    }
+
+    .calendar-table td{
+        height:80px;
+        padding:5px;
+    }
+
+    .date{
+        font-size:16px;
+    }
+
+    .study{
+        font-size:12px;
+        padding:3px;
+    }
+}

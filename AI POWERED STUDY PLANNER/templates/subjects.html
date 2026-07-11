@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/planner.css') }}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 AI Study Planner
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/planner">Planner</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <h1 class="page-title">
+            📚 Manage Subjects
+        </h1>
+
+        <!-- Add Subject Form -->
+        <div class="planner-form">
+
+            <h2>Add New Subject</h2>
+
+            <form action="/subjects/add" method="POST">
+
+                <div class="form-group">
+                    <label>Subject Name</label>
+                    <input
+                        type="text"
+                        name="subject_name"
+                        placeholder="Enter Subject Name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Difficulty</label>
+
+                    <select name="difficulty" required>
+                        <option value="">Select Difficulty</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Priority</label>
+
+                    <select name="priority" required>
+                        <option value="">Select Priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+
+                </div>
+
+                <button type="submit" class="btn">
+                    <i class="fas fa-plus-circle"></i>
+                    Add Subject
+                </button>
+
+            </form>
+
+        </div>
+
+        <br>
+
+        <!-- Subject List -->
+        <div class="plan-result">
+
+            <h2>Your Subjects</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Subject</th>
+                        <th>Difficulty</th>
+                        <th>Priority</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!-- Example Data -->
+                    <tr>
+
+                        <td>1</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Hard</td>
+                        <td>High</td>
+
+                        <td>
+
+                            <a href="/subjects/edit/1" class="btn">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+
+                            <a href="/subjects/delete/1"
+                               class="btn"
+                               onclick="return confirm('Delete this subject?');">
+
+                                <i class="fas fa-trash"></i> Delete
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2</td>
+                        <td>Python Programming</td>
+                        <td>Medium</td>
+                        <td>High</td>
+
+                        <td>
+
+                            <a href="/subjects/edit/2" class="btn">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+
+                            <a href="/subjects/delete/2"
+                               class="btn"
+                               onclick="return confirm('Delete this subject?');">
+
+                                <i class="fas fa-trash"></i> Delete
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Dynamic Flask Data -->
+                    <!--
+                    {% for subject in subjects %}
+                    <tr>
+                        <td>{{ subject.id }}</td>
+                        <td>{{ subject.subject_name }}</td>
+                        <td>{{ subject.difficulty }}</td>
+                        <td>{{ subject.priority }}</td>
+
+                        <td>
+
+                            <a href="/subjects/edit/{{ subject.id }}" class="btn">
+                                Edit
+                            </a>
+
+                            <a href="/subjects/delete/{{ subject.id }}"
+                               class="btn"
+                               onclick="return confirm('Delete this subject?');">
+
+                                Delete
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                    -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 AI-Powered Study Planner |
+            Developed by Soujanya Guvvala
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

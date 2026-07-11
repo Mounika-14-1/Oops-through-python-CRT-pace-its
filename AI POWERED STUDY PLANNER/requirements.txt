@@ -1,0 +1,28 @@
+# ===============================
+# AI-Powered Study Planner
+# Python Dependencies
+# ===============================
+
+Flask
+Flask-Login
+Flask-WTF
+Flask-SQLAlchemy
+Flask-Mail
+
+PyMySQL
+python-dotenv
+google-generativeai
+
+Werkzeug
+WTForms
+email-validator
+
+requests
+gunicorn
+
+pandas
+numpy
+
+reportlab
+Pillow
+python-dateutil

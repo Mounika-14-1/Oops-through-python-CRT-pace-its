@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timetable | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/planner.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 AI Study Planner
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/planner">Planner</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <h1 class="page-title">
+            📅 AI-Generated Study Timetable
+        </h1>
+
+        <!-- Study Summary -->
+        <div class="plan-result">
+
+            <h2>Today's Study Summary</h2>
+
+            <div class="plan-card">
+                <p><strong>Plan Type:</strong> Daily</p>
+                <p><strong>Total Subjects:</strong> 5</p>
+                <p><strong>Total Study Hours:</strong> 6 Hours</p>
+                <p><strong>Completion:</strong> 40%</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Timetable -->
+        <div class="plan-result">
+
+            <h2>Study Timetable</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Time</th>
+                        <th>Subject</th>
+                        <th>Duration</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>08:00 AM - 09:30 AM</td>
+                        <td>Artificial Intelligence</td>
+                        <td>1.5 Hours</td>
+                        <td>High</td>
+                        <td>✅ Completed</td>
+                    </tr>
+
+                    <tr>
+                        <td>10:00 AM - 11:30 AM</td>
+                        <td>Machine Learning</td>
+                        <td>1.5 Hours</td>
+                        <td>High</td>
+                        <td>⏳ Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>12:00 PM - 01:00 PM</td>
+                        <td>Python Programming</td>
+                        <td>1 Hour</td>
+                        <td>Medium</td>
+                        <td>⏳ Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>02:00 PM - 03:00 PM</td>
+                        <td>Database Management</td>
+                        <td>1 Hour</td>
+                        <td>Medium</td>
+                        <td>⏳ Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>04:00 PM - 05:00 PM</td>
+                        <td>Data Structures</td>
+                        <td>1 Hour</td>
+                        <td>Low</td>
+                        <td>⏳ Pending</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br>
+
+        <!-- Progress -->
+        <div class="plan-result">
+
+            <h2>Study Progress</h2>
+
+            <div class="progress">
+
+                <div class="progress-fill" style="width:40%;">
+                </div>
+
+            </div>
+
+            <p style="margin-top:10px;">
+                40% of today's study plan has been completed.
+            </p>
+
+        </div>
+
+        <br>
+
+        <!-- Action Buttons -->
+        <div style="text-align:center;">
+
+            <a href="/planner" class="btn">
+                <i class="fas fa-robot"></i>
+                Generate New Plan
+            </a>
+
+            <a href="/dashboard" class="btn">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 AI-Powered Study Planner |
+            Developed by Soujanya Guvvala
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

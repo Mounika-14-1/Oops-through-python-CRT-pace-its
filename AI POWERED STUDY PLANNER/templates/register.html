@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            📚 AI Study Planner
+        </div>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Register Form -->
+    <section class="section">
+
+        <div class="container">
+
+            <form id="registerForm" action="/register" method="POST">
+
+                <h2>Create Account</h2>
+
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <!-- Full Name -->
+                <div class="input-group">
+                    <label for="username">
+                        <i class="fa-solid fa-user"></i>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">
+                        <i class="fa-solid fa-lock"></i>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirmPassword">
+                        <i class="fa-solid fa-lock"></i>
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm password"
+                        required>
+                </div>
+
+                <!-- Show Password -->
+                <div style="margin-bottom:20px;">
+                    <input type="checkbox" id="showPassword">
+                    <label for="showPassword">Show Password</label>
+                </div>
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="submit-btn">
+                    Register
+                </button>
+
+                <br><br>
+
+                <p style="text-align:center;">
+                    Already have an account?
+
+                    <a href="/login">
+                        Login Here
+                    </a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 AI-Powered Study Planner | Developed by Soujanya Guvvala
+        </p>
+    </footer>
+
+    <!-- Validation Script -->
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+
+    <!-- Show Password -->
+    <script>
+        const showPassword = document.getElementById("showPassword");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+
+        showPassword.addEventListener("change", function () {
+
+            const type = this.checked ? "text" : "password";
+
+            password.type = type;
+            confirmPassword.type = type;
+
+        });
+    </script>
+
+</body>
+
+</html>

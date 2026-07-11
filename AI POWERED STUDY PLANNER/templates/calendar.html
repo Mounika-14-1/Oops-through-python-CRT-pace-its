@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner Calendar</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/calendar.css') }}">
+</head>
+
+<body>
+
+<div class="calendar-container">
+
+    <h1>📅 AI Study Planner Calendar</h1>
+
+    <div class="calendar-header">
+
+        <a class="nav-btn"
+           href="{{ url_for('calendar.calendar_page',
+                            month=prev_month,
+                            year=prev_year) }}">
+            ◀ Previous
+        </a>
+
+        <h2>{{ month }} {{ year }}</h2>
+
+        <a class="nav-btn"
+           href="{{ url_for('calendar.calendar_page',
+                            month=next_month,
+                            year=next_year) }}">
+            Next ▶
+        </a>
+
+    </div>
+
+    <table class="calendar-table">
+
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for week in calendar_data %}
+        <tr>
+
+            {% for day in week %}
+
+                {% if day == 0 %}
+
+                    <td class="empty"></td>
+
+                {% else %}
+
+                    <td>
+
+                        <div class="date">{{ day }}</div>
+
+                        <div class="study">
+                            📘 Study
+                        </div>
+
+                    </td>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

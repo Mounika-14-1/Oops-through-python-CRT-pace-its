@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Progress | AI-Powered Study Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 AI Study Planner
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/planner">Planner</a></li>
+            <li><a href="/subjects">Subjects</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <h1 class="page-title">
+            📈 Study Progress
+        </h1>
+
+        <!-- Summary Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Subjects</h3>
+                <p>6</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Study Hours</h3>
+                <p>48 Hours</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed Sessions</h3>
+                <p>22</p>
+            </div>
+
+            <div class="card">
+                <h3>Overall Progress</h3>
+                <p>72%</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Progress Bar -->
+        <div class="plan-result">
+
+            <h2>Overall Completion</h2>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+                     style="width:72%; background:#28a745; color:white; text-align:center; line-height:25px;">
+
+                    72%
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Subject Progress -->
+        <div class="plan-result">
+
+            <h2>Subject-wise Progress</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Subject</th>
+                        <th>Hours Studied</th>
+                        <th>Target Hours</th>
+                        <th>Progress</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Artificial Intelligence</td>
+                        <td>12</td>
+                        <td>15</td>
+                        <td>80%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Machine Learning</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>83%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Python Programming</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>90%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Database Management</td>
+                        <td>8</td>
+                        <td>12</td>
+                        <td>67%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Data Structures</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>60%</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br>
+
+        <!-- Recent Activities -->
+        <div class="plan-result">
+
+            <h2>Recent Study Activities</h2>
+
+            <ul style="padding-left:20px;">
+
+                <li>✅ Completed Artificial Intelligence study session (2 Hours)</li>
+                <li>✅ Completed Python Programming practice (1.5 Hours)</li>
+                <li>📚 Generated Weekly Study Plan</li>
+                <li>📝 Added Machine Learning subject</li>
+                <li>🎯 Updated exam date for Database Management</li>
+
+            </ul>
+
+        </div>
+
+        <br>
+
+        <!-- Goals -->
+        <div class="plan-result">
+
+            <h2>Upcoming Goals</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Goal</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Complete AI Revision</td>
+                        <td>20 July 2026</td>
+                        <td>In Progress</td>
+                    </tr>
+
+                    <tr>
+                        <td>Finish ML Project</td>
+                        <td>24 July 2026</td>
+                        <td>Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>Python Mock Test</td>
+                        <td>27 July 2026</td>
+                        <td>Pending</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br>
+
+        <!-- Buttons -->
+        <div style="text-align:center;">
+
+            <a href="/planner" class="btn">
+                <i class="fas fa-calendar-plus"></i>
+                Generate New Plan
+            </a>
+
+            <a href="/dashboard" class="btn">
+                <i class="fas fa-home"></i>
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 AI-Powered Study Planner |
+            Developed by Soujanya Guvvala
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
