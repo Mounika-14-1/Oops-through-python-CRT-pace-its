@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #87CEEB, #B0E0E6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Main Calculator Box */
+
+.container {
+
+    width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    border: 3px solid #5a3218;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+}
+
+
+/* Heading */
+
+h1 {
+
+    color: #5a3218;
+    font-size: 35px;
+    margin-bottom: 15px;
+
+}
+
+
+.subtitle {
+
+    color: #5a3218;
+    font-size: 17px;
+    margin-bottom: 30px;
+
+}
+
+
+/* Form */
+
+form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+}
+
+
+label {
+
+    color: #5a3218;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+
+input {
+
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #5a3218;
+    font-size: 16px;
+    color: #5a3218;
+
+}
+
+
+
+button {
+
+    padding: 15px;
+    background: #5a3218;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    background: #8b5a2b;
+    transform: scale(1.05);
+
+}
+
+
+/* Result */
+
+.result {
+
+    margin-top: 30px;
+    padding: 25px;
+    background: #f0fbff;
+    border: 2px solid #5a3218;
+    border-radius: 20px;
+
+}
+
+
+.result h2 {
+
+    color: #5a3218;
+
+}
+
+
+.age-display {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+
+}
+
+
+.age-box {
+
+    background: #87CEEB;
+    width: 100px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #5a3218;
+    color: #5a3218;
+
+}
+
+
+.age-box span {
+
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+
+.message {
+
+    margin-top: 20px;
+    color: #5a3218;
+    font-style: italic;
+
+}

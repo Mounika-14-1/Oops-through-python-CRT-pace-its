@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Age Calculator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎂 Age Calculator</h1>
+
+        <p class="subtitle">
+            Calculate your exact age in years, months, and days
+        </p>
+
+
+        <form method="POST">
+
+            <label for="dob">
+                Enter Your Date of Birth
+            </label>
+
+            <input 
+                type="date"
+                id="dob"
+                name="dob"
+                required
+            >
+
+            <button type="submit">
+                Calculate Age
+            </button>
+
+        </form>
+
+
+        {% if error %}
+        <div class="error">
+            ⚠️ {{ error }}
+        </div>
+        {% endif %}
+
+
+        {% if age %}
+
+        <div class="result">
+
+            <h2>🎉 Your Age</h2>
+
+            <p class="result-text">
+                You are
+            </p>
+
+            <div class="age-display">
+
+                <div class="age-box">
+                    <span>{{ age.years }}</span>
+                    <small>Years</small>
+                </div>
+
+                <div class="age-box">
+                    <span>{{ age.months }}</span>
+                    <small>Months</small>
+                </div>
+
+                <div class="age-box">
+                    <span>{{ age.days }}</span>
+                    <small>Days</small>
+                </div>
+
+            </div>
+
+
+            <p class="message">
+                ✨ Every year is a new opportunity to grow!
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
